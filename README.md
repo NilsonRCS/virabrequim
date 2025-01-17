@@ -1,50 +1,40 @@
-# Welcome to your Expo app 👋
+# Virabrequim
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Este é um aplicativo simples desenvolvido em React Native com Expo, que permite visualizar marcas de carros e seus respectivos modelos usando dados de uma API.
 
-## Get started
+## Instalação
 
-1. Install dependencies
+Para começar, clone este repositório em sua máquina local:
 
-   ```bash
-   npm install
-   ```
+ https: git clone https://github.com/NilsonRCS/virabrequim.git \
+ sh: git clone git@github.com:NilsonRCS/virabrequim.git \
+ gitHUB CLI: gh repo clone NilsonRCS/virabrequim 
 
-2. Start the app
+ Após clonar o repositório, navegue até a pasta do projeto e instale as dependências com o npm:
 
-   ```bash
-    npx expo start
-   ```
+ cd virabrequim
+ npm install
 
-In the output, you'll find options to open the app in a
+ Iniciar o projeto 
+ Para iniciar o aplicativo, execute o seguinte comando:
+ npx expo start
+ Isso abrirá a interface do Expo no seu navegador. A partir daí, você pode escanear o código QR usando o aplicativo Expo Go no seu dispositivo móvel, ou iniciar o projeto em um emulador.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+ Sobre o Projeto
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+ Este é um aplicativo simples que consome uma API para exibir marcas de carros e seus modelos. O fluxo do app é:
 
-## Get a fresh project
+   Ao iniciar o aplicativo, o usuário será direcionado à página de login. \
+   O usuário deve utilizar as seguintes credenciais para acessar o app: \
+       Usuário: teste \
+       Senha: 123 
+       
+   Após o login, o usuário verá uma lista de marcas de carros.
+   Ao clicar em uma marca, um modal será exibido com os modelos dessa marca.
 
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+  Tecnologias utilizadas: \
+    React Native: Framework para construção de aplicativos móveis. \
+    Expo: Ferramenta para facilitar o desenvolvimento com React Native. \
+    Axios: Biblioteca para facilitar as requisições HTTP. \
+    Styled-Components: Biblioteca para estilização dos componentes de forma modular e reutilizável. \
+    TypeScript: Superset do JavaScript, que adiciona tipagem estática e outros recursos para melhorar a produtividade e a manutenção do código.
