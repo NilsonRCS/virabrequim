@@ -1,6 +1,9 @@
+
 import { Alert } from "react-native";
-import { SignInData } from '../models/SignInModel';
-import { signInSchema } from '../utils/signInSchema'
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { SignInData } from "../models/SignInModel";
+import { signInSchema } from "../utils/signInSchema";
+import { apiToLogin } from "../services/api";
 
 export const handleSignIn = async (
   data: SignInData,
@@ -17,16 +20,14 @@ export const handleSignIn = async (
   }
 
   try {
-    const response = await fetch("https://test-api-y04b.onrender.com/signIn", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
+    const response = await apiToLogin.post("/signIn", data);
 
-    const responseData = await response.json();
+    const responseData = response.data;
 
-    if (response.ok) {
-      onSuccess(responseData.name);
+
+    if (response && responseData.user.name) {
+      await AsyncStorage.setItem("userName", responseData.user.name);
+      onSuccess(responseData.user.name);
       return true;
     } else {
       Alert.alert(
@@ -36,6 +37,7 @@ export const handleSignIn = async (
       return false;
     }
   } catch (error) {
+    console.log(error)
     Alert.alert(
       "Erro",
       "Não foi possível conectar à API. Tente novamente mais tarde."
